@@ -1,0 +1,30 @@
+body {
+    background-image: url("https://images.designtrends.com/wp-content/uploads/2016/02/23104259/Green-Weather-Train-Wallpaper.jpg");
+
+
+}
+
+.container {
+    opacity: .9;
+    font-family: 'Rye', cursive;
+
+}
+
+.jumbotron {
+    text-align: center;
+    margin-top: 20px;
+}
+
+h3 {
+    font-size: 20px;
+}
+
+th {
+    font-size: 16px;
+}
+
+#submitButton {
+    color: white;
+    background-color: #3e3e41;
+
+}
