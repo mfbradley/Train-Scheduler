@@ -4,12 +4,12 @@ $(document).ready(function() {
 
     // Initialize Firebase
     var config = {
-        apiKey: "AIzaSyDxrI5mWSglqm1P37qlaxr41vmbItKopjE ",
-        authDomain: "trainschedule-930e4.firebaseapp.com ",
-        databaseURL: "https://trainschedule-930e4.firebaseio.com ",
-        projectId: "trainschedule-930e4 ",
-        storageBucket: "trainschedule-930e4.appspot.com ",
-        messagingSenderId: "211869557537 "
+        apiKey: "AIzaSyDxrI5mWSglqm1P37qlaxr41vmbItKopjE",
+        authDomain: "trainschedule-930e4.firebaseapp.com",
+        databaseURL: "https://trainschedule-930e4.firebaseio.com",
+        projectId: "trainschedule-930e4",
+        storageBucket: "trainschedule-930e4.appspot.com",
+        messagingSenderId: "211869557537"
     };
 
     firebase.initializeApp(config);
