@@ -1,13 +1,10 @@
 body {
     background-image: url("https://images.designtrends.com/wp-content/uploads/2016/02/23104259/Green-Weather-Train-Wallpaper.jpg");
-
-
 }
 
 .container {
     opacity: .9;
     font-family: 'Rye', cursive;
-
 }
 
 .jumbotron {
@@ -26,5 +23,4 @@ th {
 #submitButton {
     color: white;
     background-color: #3e3e41;
-
 }

@@ -20,17 +20,17 @@ $(document).ready(function() {
     var minutesAway;
 
 
-
+    // on-click event handler for the submit button in the Add Train form
     $("#submitButton").on("click", function(event) {
         event.preventDefault();
 
+        // grab values of the input fields
         var trainName = $("#inputTrainName").val().trim();
         var destination = $("#inputDestination").val().trim();
         var firstTrainTime = $("#inputFirstTrainTime").val().trim();
         var frequency = $("#inputFrequency").val().trim();
 
-
-
+        // push values into Firebase
         db.ref().push({
             trainName: trainName,
             destination: destination,
@@ -39,11 +39,7 @@ $(document).ready(function() {
             dateAdded: firebase.database.ServerValue.TIMESTAMP
         });
 
-        console.log(trainName);
-        console.log(destination);
-        console.log(firstTrainTime);
-        console.log(frequency);
-
+        // clear input fields on the form
         $("#inputTrainName").val("");
         $("#inputDestination").val("");
         $("#inputFirstTrainTime").val("");
@@ -51,37 +47,32 @@ $(document).ready(function() {
 
     });
 
+    // when a new train is added to Firebase...
     db.ref().on("child_added", function(childSnapshot, prevChildKey) {
-        console.log(childSnapshot.val());
 
+        // Grab values from Add Train input fields
         var trainName = childSnapshot.val().trainName;
         var destination = childSnapshot.val().destination;
         var firstTrainTime = childSnapshot.val().firstTrainTime;
         var frequency = childSnapshot.val().frequency;
-
-        console.log(trainName);
-        console.log(destination);
-        console.log(firstTrainTime);
-        console.log(frequency);
-
+        
+        // using moment.js calculate ...
+        // convert first train time so it is scheduled in the present
         var firstTrainTimeConverted = moment(firstTrainTime, "HH:mm").subtract(1, "years");
-        console.log(firstTrainTimeConverted);
 
-        var currentTime = moment();
-        console.log("CURRENT TIME: " + moment(currentTime).format("HH:mm"));
-
+        // calculate difference in time between the first train time and the current time (this will be used to determine minutes away)
         var diffTime = moment().diff(moment(firstTrainTimeConverted), "minutes");
-        console.log("DIFFERENCE IN TIME: " + diffTime);
-
+        
+        // calculate the time remainder 
         var timeRemainder = diffTime % frequency;
-        console.log(timeRemainder);
-
+        
+        // subtract time remainder from frequency to calculate how many minutes remain until the next train
         var minutesTilTrain = frequency - timeRemainder;
-        console.log("MINUTES TIL TRAIN: " + minutesTilTrain);
-
+        
+        // display next train arrival in HH:mm format
         var nextArrival = moment().add(minutesTilTrain, "minutes");
-        console.log("ARRIVAL TIME: " + moment(nextArrival).format("hh:mm"));
 
+        // create a new row and append new train (from Add Train form) to Current Train Schedule
         var newRow = $('<tr>');
         newRow.append($('<td>').text(trainName));
         newRow.append($('<td>').text(destination));
