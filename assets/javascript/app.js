@@ -56,7 +56,7 @@ $(document).ready(function() {
         var firstTrainTime = childSnapshot.val().firstTrainTime;
         var frequency = childSnapshot.val().frequency;
         
-        // using moment.js calculate ...
+        // using Moment.js calculate ...
         // convert first train time so it is scheduled in the present
         var firstTrainTimeConverted = moment(firstTrainTime, "HH:mm").subtract(1, "years");
 
