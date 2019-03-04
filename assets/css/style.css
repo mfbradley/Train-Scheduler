@@ -28,6 +28,13 @@ th {
 
 input {
     width: 100%;
+    /* border-radius: 2%; */
+}
+
+input:focus {
+    border-color: green;
+    /* border-width: 1px; */
+    outline: 0 none;
 }
 #submitButton {
     color: white;
