@@ -4,84 +4,97 @@
 <head>
     <meta charset="UTC-8">
     <title>Train Scheduler</title>
-    
+
     <!-- Bootstrap Link -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
     <!-- style.css Link-->
     <link rel="stylesheet" href="./assets/css/style.css" type="text/css" />
-    
+
     <!-- Google Fonts Link -->
-    <link href="https://fonts.googleapis.com/css?family=Rye" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/css?family=Rye" rel="stylesheet"> -->
+    <link href="https://fonts.googleapis.com/css?family=Domine|Roboto" rel="stylesheet">
 </head>
 
 <body>
-    
+
     <!-- Content Container -->
     <div class="container">
-        
-        <!-- Jumbotron -->
-        <div class="jumbotron ">
-            <h1>Train Scheduler</h1>
-            <p>Alllll Abooooaaaaaaard!</p>
-        </div>
 
+        <!-- Jumbotron -->
+        <div class="row">
+            <div class="col-md-12">
+                <div class="jumbotron ">
+                    <h1>Train Scheduler</h1>
+                    <p>Alllll Abooooaaaaaaard!</p>
+                </div>
+            </div>
+        </div>
         <!-- Current Train Schedule Container -->
         <!-- Lists trains with name, destination, frequency in minutes, next arrival, and minutes away -->
-        <div class="panel panel-default ">
-            <div class="panel-heading ">
-                <h2 class="panel-title ">Current Train Schedule</h2>
+        <div class="col-md-8">
+            <div class="panel panel-default ">
+                <div class="panel-heading ">
+                    <h2 class="panel-title ">Current Train Schedule</h2>
+                </div>
+                <div class="panel-body ">
+                </div>
+                <table class="table">
+                    <tr>
+                        <th>Train Name</th>
+                        <th>Destination</th>
+                        <th>Frequency (min)</th>
+                        <th>Next Arrival</th>
+                        <th>Minutes Away</th>
+                    </tr>
+                </table>
             </div>
-            <div class="panel-body ">
-            </div>
-            <table class="table">
-                <tr>
-                    <th>Train Name</th>
-                    <th>Destination</th>
-                    <th>Frequency (min)</th>
-                    <th>Next Arrival</th>
-                    <th>Minutes Away</th>
-                </tr>
-            </table>
         </div>
 
         <!-- Add Train Form -->
         <!-- Input fields for train name, destination, first train time, and frequency in mins -->
-        <div class="panel panel-default ">
-            <div class="panel-heading ">
-                <h2 class="panel-title ">Add Train</h2>
-            </div>
+        <div class="col-md-4">
+            <div class="panel panel-default add-train">
+                <div class="panel-heading ">
+                    <h2 class="panel-title ">Add Train</h2>
+                </div>
 
-            <div class="panel-body ">
-                <p>Train Name</p>
-                <input id="inputTrainName" type="text " name=" " />
-                <br><br>
-                <p>Destination</p>
-                <input id="inputDestination" type="text " name=" " />
-                <br><br>
-                <p>First Train Time (HH:mm - military time)</p>
-                <input id="inputFirstTrainTime" type="text " name=" " />
-                <br><br>
-                <p>Frequency (min)</p>
-                <input id="inputFrequency" type="text " name=" " />
-                <br><br>
-                <button class="btn btn-primary" id="submitButton">Submit</button>
+                <div class="panel-body">
+                    <p>Train Name</p>
+                    <input id="inputTrainName" type="text " name=" " />
+                    <br><br>
+                    <p>Destination</p>
+                    <input id="inputDestination" type="text " name=" " />
+                    <br><br>
+                    <p>First Train Time (HH:mm - military time)</p>
+                    <input id="inputFirstTrainTime" type="text " name=" " />
+                    <br><br>
+                    <p>Frequency (min)</p>
+                    <input id="inputFrequency" type="text " name=" " />
+                    <br><br>
+                    <button class="btn btn-primary" id="submitButton">Submit</button>
+                </div>
             </div>
         </div>
     </div>
-    
+    </div>
+
     <!-- jQuery Script -->
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-    
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+
     <!-- Bootstrap Script -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js " integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa " crossorigin="anonymous "></script>
-    
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js "
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa "
+        crossorigin="anonymous "></script>
+
     <!-- Firebase Script -->
     <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
-    
+
     <!-- app.js Script -->
     <script type="text/javascript" src="./assets/javascript/app.js"></script>
-    
+
     <!-- Moment.js Script -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.19.2/moment.min.js"></script>
 </body>
